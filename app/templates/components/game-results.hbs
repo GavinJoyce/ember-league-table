@@ -1,0 +1,22 @@
+<h2 class="text-green-dark text-center text-4xl">Games played: {{@games.length}}</h2>
+
+{{#each (take 25 (reverse @games)) as |game|}}
+  <div class="bg-blue-lightest m-2 flex font-bold">
+    <div class="flex-1 text-right p-2">
+      {{game.homeTeam.name}}
+    </div>
+
+    <div class="flex-shink bg-yellow p-2 border-r-2 border-yellow-dark">
+      {{game.homeGoals}}
+    </div>
+
+    <div class="flex-shrink bg-yellow p-2 border-l-2 border-yellow-dark">
+      {{game.awayGoals}}
+    </div>
+
+    <div class="flex-1 p-2">
+      {{game.awayTeam.name}}
+    </div>
+
+  </div>
+{{/each}}

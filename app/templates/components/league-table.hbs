@@ -1,0 +1,45 @@
+<table class="w-full">
+  <thead class="bg-grey-lighter border-b-2 border-grey p-4 m-4 text-left align-bottom">
+    <th class="h-10 w-10"></th>
+    <th>Team</th>
+    <th>Played</th>
+    <th>Won</th>
+    <th>Drawn</th>
+    <th>Lost</th>
+    <th>For</th>
+    <th>Against</th>
+    <th>GD</th>
+    <th>Points</th>
+    <th>Form</th>
+  </thead>
+  {{#each (sort-by "points:desc" "goalDifference:desc" @teams) as |team index|}}
+    <tr class={{if (or (eq index 4) (eq index 5) (eq index 17)) "border-t-2 border-grey border-dashed"}}>
+      <td class="p-4">{{add 1 index}}</td>
+      <td class="font-bold">{{team.name}}</td>
+      <td>{{team.games.length}}</td>
+      <td>{{team.gamesWon.length}}</td>
+      <td>{{team.gamesDrawn.length}}</td>
+      <td>{{team.gamesLost.length}}</td>
+      <td>{{team.goalsScored}}</td>
+      <td>{{team.goalsConceded}}</td>
+      <td>{{team.goalDifference}}</td>
+      <td class="font-bold">{{team.points}}</td>
+      <td>
+        <div class="flex text-white text-sm text-center">
+
+          {{#each (take 5 (sort-by "playedOn:desc" team.games)) as |game|}}
+            {{#if game.isDraw}}
+              <span class="p-1 mr-1 bg-grey w-8">D</span>
+            {{else if (eq game.winningTeam.id team.id)}}
+              <span class="p-1 mr-1 bg-green w-8">W</span>
+            {{else}}
+              <span class="p-1 mr-1 bg-red w-8">L</span>
+            {{/if}}
+          {{/each}}
+        </div>
+        
+      </td>
+
+    </tr>
+  {{/each}}
+</table>
