@@ -1,7 +1,14 @@
 # ember-league-table
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+A live updating football league table.
+
+ * Watch the video tutorial: https://www.youtube.com/watch?v=vYakop2d2RI
+ * Run the app: http://ember-league-table.surge.sh/
+
+[<img width="848" alt="screen shot 2018-11-05 at 19 42 08" src="https://user-images.githubusercontent.com/2526/48022417-f59b2500-e132-11e8-8584-eedc91ee58f4.png">](https://www.youtube.com/watch?v=vYakop2d2RI)
+
+[<img width="2210" alt="screen shot 2018-11-05 at 19 46 02" src="https://user-images.githubusercontent.com/2526/48022588-735f3080-e133-11e8-98c0-4529208faa1b.png">](https://www.youtube.com/watch?v=vYakop2d2RI)
+
 
 ## Prerequisites
 
